@@ -17,3 +17,7 @@ function isPowerOfTwo(number) {
   }
   return true
 }
+
+// best case: O(1) constant time
+// average case: O(log n) logarithmic time
+// worst case: O(log n) logarithmic time
