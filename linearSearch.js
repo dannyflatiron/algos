@@ -8,7 +8,7 @@ function findElement(arr, element) {
       return position
     }
   }
-}
+} 
 
 const person = { name: 'Manu', age: 33 }
 
@@ -19,3 +19,4 @@ const objects = [
 ]
 
 findElement(objects, person)
+

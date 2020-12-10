@@ -39,3 +39,5 @@ findElement(arr, 99)
 // best case: O(1) constant time
 // average case: tends to be O(log n)
 // worst case: O(log n) logarithmic time since we are not visiting every element in the array
+
+// space complexity: O(1)
