@@ -49,13 +49,26 @@ class Node {
     }
 
     if (identifiedNode.left && identifiedNode.right) {
-
+      const nextBiggerNode = identifiedNode.right.findNext()
+      if (nextBiggerNode.value !== identifiedNode.right.value) {
+        this.remove(nextBiggerNode.value)
+        identifiedNode.value = nextBiggerNode.value
+      } else {
+        identifiedNode.value = identifiedNode.right.value
+        identifiedNode.right = identifiedNode.right.right
+      }
     } else {
       const childNode = identifiedNode.left || identifiedNode.right
 
       identifiedNode.left = childNode.left
       identifiedNode.right = childNode.right
       identifiedNode.value = childNode.value
+    }
+    if (identifiedNode.left) {
+      identifiedNode.left.parent = identifiedNode
+    }
+    if (identifiedNode.right) {
+      identifiedNode.right.parent = identifiedNode
     }
   }
 
@@ -84,6 +97,14 @@ class Node {
     if (this.value < value && this.left) {
       return this.left.find(value)
     }
+  }
+
+  findNext() {
+    if (!this.left) {
+      return this
+    }
+
+    return this.left.findNext()
   }
 
 }
