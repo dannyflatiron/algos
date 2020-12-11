@@ -23,6 +23,19 @@ class Node {
     }
   }
 
+  find() {
+    if (this.value === value) {
+      return this
+    }
+
+    if (this.value < value && this.right) {
+      return this.right.find(value)
+    }
+
+    if (this.value < value && this.left) {
+      return this.left.find(value)
+    }
+  }
 
 }
 
