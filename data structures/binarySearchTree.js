@@ -12,12 +12,21 @@ class Node {
     }
 
     if (this.value < value) {
+      if (this.right) {
+        this.right.add(value)
+        return
+      }
       const newNode = new Node(value)
       this.right = newNode
       return
     }
 
     if (this.value > value) {
+      if (this.left) {
+        this.left.add(value)
+        return
+      }
+      const newNode = new Node(value)
       this.left = newNode
       return
     }
