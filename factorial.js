@@ -13,3 +13,9 @@ function fact(number) {
 
 // time complexity 
 // O(n) linear time complexity
+
+// space complexity: O(1)
+// in this loop there is no data that is being permanently stored
+// because the data is continuously updated
+// the only permenantly stored data is number and it has no correlation with n because the space of 
+// number will always be 1 
