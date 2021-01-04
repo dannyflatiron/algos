@@ -47,5 +47,39 @@ function twoNumberSum (array, targetSum) {
   return []
 }
 
+function twoNumberSum(array, targetSum) {
+  
+  
+	for (let firstPointer = 0; firstPointer < array.length; firstPointer++) {
+		let currNum = array[firstPointer] // first num
+		for (let secondPointer = firstPointer + 1; secondPointer < array.length; secondPointer++) {
+			let secondCurrNum = array[secondPointer] // second num
+      if (currNum + secondCurrNum === targetSum) {
+				return [currNum, secondCurrNum]
+			}
+		}
+  }
+
+  return []
+}
+
 // time complexity: O(n)
 // space complexity: O(n)
+
+function twoNumberSum(array, targetSum) {
+    
+    const nums = {} // hash table
+    
+    for (let i = 0; i < array.length; i++) {
+      let num = array[i]
+      const potentialMatch = targetSum - num
+      
+      if (nums[num]) {
+        return [num, potentialMatch] // answer
+      } else (
+        nums[potentialMatch] = true // stores potentialMatch in hash table nums
+      )
+    }
+    
+    return []	
+  }
