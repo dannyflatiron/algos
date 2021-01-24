@@ -4,6 +4,10 @@ function getNthFib(n) {
   let counter = 3
 
   while (counter <= n) {
-
+    let nextFib = lastTwo[0] + lastTwo[1]
+    lastTwo[0] = lastTwo[1]
+    lastTwo[1] = nextFib
+    counter +=1
   }
+  return n > 1 ? lastTwo[1] : lastTwo[0]
 }
