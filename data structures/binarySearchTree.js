@@ -85,7 +85,7 @@ class Node {
 
   }
 
-  find() {
+  find(value) {
     if (this.value === value) {
       return this
     }
